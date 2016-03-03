@@ -1,0 +1,17 @@
+//
+//  RIVALS-Prefix.pch
+//  RIVALS
+//
+//  Created by Sanjay Kumar on 02/03/16.
+//  Copyright © 2016 Sanjay Kumar. All rights reserved.
+//
+
+#ifndef RIVALS_Prefix_pch
+#define RIVALS_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "constant.h"
+//#import "AppDelegate.h"
+#import "CLXURLConnection.h"
+#endif /* RIVALS_Prefix_pch */

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="h8X-IH-03T">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="EYK-Sw-D2C">
+            <objects>
+                <viewController id="6VJ-Qj-Hiv" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y32-Lh-t2g"/>
+                        <viewControllerLayoutGuide type="bottom" id="uls-0c-6Po"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ypR-9j-LlL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aUg-2I-ENQ">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yw-jd-cu7">
+                                <rect key="frame" x="45" y="183" width="231" height="30"/>
+                                <state key="normal" title="Sing in With Facebook">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginFb:" destination="6VJ-Qj-Hiv" eventType="touchUpInside" id="rzc-HX-8aj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aUg-2I-ENQ" secondAttribute="trailing" id="HuN-rf-Hhb"/>
+                            <constraint firstItem="aUg-2I-ENQ" firstAttribute="top" secondItem="y32-Lh-t2g" secondAttribute="bottom" id="MlW-5w-RON"/>
+                            <constraint firstItem="uls-0c-6Po" firstAttribute="top" secondItem="aUg-2I-ENQ" secondAttribute="bottom" id="N7h-Lq-SFs"/>
+                            <constraint firstItem="aUg-2I-ENQ" firstAttribute="leading" secondItem="ypR-9j-LlL" secondAttribute="leading" id="csr-Qe-3iG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cIr-fW-hNa"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eQg-SS-0cm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="444" y="-356"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0i1-Fr-g0h">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h8X-IH-03T" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="S93-rf-ICl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6VJ-Qj-Hiv" kind="relationship" relationship="rootViewController" id="5Ad-Ye-Gf6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gol-qX-jxz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46" y="-364"/>
+        </scene>
+    </scenes>
+</document>
