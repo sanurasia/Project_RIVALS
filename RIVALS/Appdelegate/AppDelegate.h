@@ -27,6 +27,6 @@
 -(void)startAnimatingIndicatorView;
 -(void)stopAnimatingIndicatorView;
 -(void)prepareMyChallengeController;
-
+-(UIImage *) imageByScalingAndCroppingForSize:(UIImage *)inImage : (CGSize ) cropImageSize;
 @end
 extern AppDelegate *appDelegate;

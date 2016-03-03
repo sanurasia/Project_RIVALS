@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MyChallenge.h"
+#import "CustomLabel.h"
 @interface challengeCell : UITableViewCell{
     
 }
@@ -24,7 +25,9 @@
 @property(nonatomic,weak)IBOutlet UILabel *minutes_lbl;
 @property(nonatomic,weak)IBOutlet UIButton *accept_btn;
 @property(nonatomic,weak)IBOutlet UIButton *reject_btn;
-@property(nonatomic,weak)IBOutlet UILabel *challenge;
+@property(nonatomic,weak)IBOutlet CustomLabel *challenge;
 @property(nonatomic,weak)IBOutlet UIImageView *Img_player1;
 @property(nonatomic,weak)IBOutlet UIImageView *Img_player2;
+
+-(void)setElement:(MyChallenge*)challengeObj;
 @end

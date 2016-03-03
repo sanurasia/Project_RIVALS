@@ -24,6 +24,7 @@
     [self setLeftNavigationButtons];
     [self setSlider];
     dataArray = [[NSMutableArray alloc]init];
+
     // Do any additional setup after loading the view.
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -38,37 +39,7 @@
         [cell setNeedsDisplay];
     }
     MyChallenge *challenge =[dataArray objectAtIndex:[indexPath row]];
-    cell.challengerName_lbl.text=challenge.challengerName;
-    NSString *path1 =[NSString stringWithFormat:@"http://localhost/xampp/demo/Admin/uploads/%@",challenge.Image_Challenger];
-    cell.challenge_Img.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:path1]]];
-    cell.challenge.text=challenge.challenge;
-    cell.playerOneName_lbl.text=challenge.playerOneName;
-    cell.playerTwoName_lbl.text=challenge.playerTwoName;
-    cell.acceptorName_lbl.text=challenge.acceptorName;
-    cell.challengerName_lbl.text=challenge.challengerName;
-    cell.days_lbl.text=challenge.days;
-    cell.hours_lbl.text=challenge.hours;
-    cell.minutes_lbl.text=challenge.minutes;
-    NSString *path2 =[NSString stringWithFormat:@"http://localhost/xampp/demo/%@",challenge.Image_Playerone];
-    cell.Img_player1.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:path2]]];
-     NSString *path3 =[NSString stringWithFormat:@"http://localhost/xampp/demo/%@",challenge.Image_Playertwo];
-    cell.Img_player2.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:path3]]];
-    
-    if (challenge.state==1)
-    cell.state_lbl.text=@"Active";
-    else
-    cell.state_lbl.text=@"InActive";
-    
-    cell.Img_player1.layer.cornerRadius = 40;
-    cell.Img_player1.layer.masksToBounds = YES;
-    cell.Img_player2.layer.cornerRadius = 40;
-    cell.Img_player2.layer.masksToBounds = YES;
-    cell.challenge_Img.layer.cornerRadius = 25;
-    cell.challenge_Img.layer.masksToBounds = YES;
-    [cell.challenge_Img.layer setBorderColor: [[UIColor colorWithRed:0.905 green:0.0 blue:0.552 alpha:1.0] CGColor]];
-    [cell.challenge_Img.layer setBorderWidth: 5.0];
-    
-    
+    [cell setElement:challenge];
     return cell;
 }
 
@@ -133,6 +104,24 @@
 }
 #pragma mark Left bar buttons set
 -(void)setLeftNavigationButtons{
+    
+    UIView *buttonContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 44)];
+    buttonContainer.backgroundColor = [UIColor clearColor];
+    UIButton *button0 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button0 setFrame:CGRectMake(0, 0, 200, 44)];
+    [button0 addTarget:self action:@selector(dropDownPressed) forControlEvents:UIControlEventTouchUpInside];
+    [button0 setTitle:@"My Challenges" forState:UIControlStateNormal];
+    [button0 setTitleColor:[UIColor colorWithRed:227.0/255.0 green:50.0/255.0 blue:122.0/255.0 alpha:1.0] forState:UIControlStateNormal];
+    button0.titleLabel.font=[UIFont boldSystemFontOfSize:18];
+    //[button0 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [buttonContainer addSubview:button0];
+    
+    //add your spacer images and button1 and button2...
+    
+    self.navigationItem.titleView = buttonContainer;
+    
+    
+    
     UIImage* buttonImage = [UIImage imageNamed:@"top_men_list@2x.png"];
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     leftButton.frame= CGRectMake(0, 0,34, 33);
@@ -143,6 +132,11 @@
     [self.navigationItem setLeftBarButtonItems:[NSArray arrayWithObjects:backBtn, nil]];
 }
 #pragma mark - menu button
+-(void)dropDownPressed{
+    
+}
+
+
 -(void)menuPressed{
     [UIView animateWithDuration:1.0 animations:^{
         if (sliderView.hidden)

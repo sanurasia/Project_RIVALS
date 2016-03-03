@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface MyChallenge : NSObject
 @property(nonatomic,strong)NSString *challenge;
 @property(nonatomic,strong) NSString *challengerName;
@@ -23,4 +24,5 @@
 @property(nonatomic,strong)NSString *Image_Playerone;
 @property(nonatomic,strong)NSString *Image_Playertwo;
 -(id)initWithDictionary:(NSDictionary*)node;
+
 @end
